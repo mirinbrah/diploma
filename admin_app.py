@@ -7,7 +7,6 @@ import database
 from setting import *
 
 
-
 def parse_and_save():
     listbox.delete(0, tk.END)
     news = get_latest_news()
@@ -23,7 +22,7 @@ def parse_and_save():
     conn.commit()
     conn.close()
     messagebox.showinfo("Успех", "Новости загружены!")
-
+#обработка ошибок
 
 def send_newsletter():
     conn = sqlite3.connect('database.db')
@@ -62,7 +61,7 @@ root.title("Админ-панель: Агрегатор")
 root.geometry("600x400")
 
 frame = tk.Frame(root)
-frame.pack(pady=20, fill=tk.BOTH, expand=True)
+frame.pack(fill=tk.BOTH, expand=True)
 
 scrollbar = tk.Scrollbar(frame)
 scrollbar.pack(side=tk.RIGHT, fill=tk.Y)
